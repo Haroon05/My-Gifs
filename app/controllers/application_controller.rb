@@ -21,15 +21,37 @@ def third
   @caption = "Dafuq?"
   render 'show'
 end 
-  
+
   def new 
     
   end
   
-#def show 
- # @id params ['id']
- # render show
-#end 
+  def create
+    g = Gif.new
+    g.caption = params['caption']
+    g.url = params['url']
+    g.save
+    redirect_to "/gifs/#{ g.id }"
+  end
+    
+  def edit
+    @gif = Gif.find_by_id(params['id'])
+    
+  end
+  
+  #def update
+   # g = Gif.find_by_id(params['id'])
+   # g.caption = params['caption']
+   # g.url = params['url']
+   # g.save
+   # redirect_to "/gifs/#{ g.id }"
+ # end 
+  
+def show 
+ @gif = Gif.find_by_id(params['id']) 
+ @caption = @gif.caption 
+ render 'show'
+end 
   
   end
 
