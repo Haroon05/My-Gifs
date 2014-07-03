@@ -56,6 +56,7 @@ end
   def destroy
     g = Gif.find_by_id(params['id'])
     g.destroy
+    redirect_to "/gifs"
   end
   
   def index
