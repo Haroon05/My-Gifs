@@ -57,6 +57,10 @@ end
     g = Gif.find_by_id(params['id'])
     g.destroy
   end
+  
+  def index
+    @gifs = Gif.all
+  end
    
   end
 
