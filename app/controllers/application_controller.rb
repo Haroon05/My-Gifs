@@ -39,13 +39,13 @@ end
     
   end
   
-  #def update
-   # g = Gif.find_by_id(params['id'])
-   # g.caption = params['caption']
-   # g.url = params['url']
-   # g.save
-   # redirect_to "/gifs/#{ g.id }"
- # end 
+  def update
+    g = Gif.find_by_id(params['id'])
+    g.caption = params['caption']
+    g.url = params['url']
+    g.save
+    redirect_to "/gifs/#{ g.id }"
+  end 
   
 def show 
  @gif = Gif.find_by_id(params['id']) 
@@ -53,5 +53,10 @@ def show
  render 'show'
 end 
   
+  def destroy
+    g = Gif.find_by_id(params['id'])
+    g.destroy
+  end
+   
   end
 

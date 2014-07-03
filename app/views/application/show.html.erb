@@ -16,7 +16,9 @@
       <div class="col-md-12">
         <div class="caption"><%= @gif.caption %></div>
       </div>
-      <a href ="/gifs/<%= @gif.id %>/edit">edit</a>
-         
+      <div class="links">
+        <a href ="/gifs/<%= @gif.id %>/edit">edit</a>
+        <a href ="/gifs/<%= @gif.id %>/destroy">delete</a>
+      </div> 
     </div>
   </div>
